@@ -1,7 +1,8 @@
-package org.iths.model;
+package org.iths.dao;
 
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
+import org.iths.model.MovieDAO;
 
 import java.util.ArrayList;
 import java.util.List;
