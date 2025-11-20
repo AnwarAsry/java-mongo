@@ -1,6 +1,5 @@
 package org.iths.model;
 
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
@@ -21,11 +20,6 @@ public class MovieDAOMongo implements MovieDAO {
 
     @Override
     public List<Document> findAll() {
-        FindIterable<Document> movies = collection.find();
-        List<Document> moviesList = new ArrayList<>();
-        for (Document movie : movies) {
-            moviesList.add(movie);
-        }
-        return moviesList;
+        return collection.find().into(new ArrayList<>());
     }
 }
